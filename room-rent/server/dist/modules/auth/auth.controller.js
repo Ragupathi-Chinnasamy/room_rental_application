@@ -20,8 +20,7 @@ let AuthController = class AuthController {
     constructor(authService) {
         this.authService = authService;
     }
-    async WebUserLogin(signInCredentials, req) {
-        console.log(req === null || req === void 0 ? void 0 : req.headers);
+    async WebUserLogin(signInCredentials) {
         const result = await this.authService.SignIn(signInCredentials);
         return {
             status: true,
@@ -33,9 +32,8 @@ let AuthController = class AuthController {
 __decorate([
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
-    __param(1, (0, common_1.Req)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [auth_dto_1.SignInDto, Object]),
+    __metadata("design:paramtypes", [auth_dto_1.SignInDto]),
     __metadata("design:returntype", Promise)
 ], AuthController.prototype, "WebUserLogin", null);
 AuthController = __decorate([

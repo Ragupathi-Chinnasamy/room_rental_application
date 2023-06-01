@@ -10,6 +10,7 @@ export class UserController {
   @UseInterceptors(AdminAuthGuard)
   async getAllUsers() {
     const result = await this.prismaService.user.findMany({});
+    console.log(result);
 
     return {
       status: true,

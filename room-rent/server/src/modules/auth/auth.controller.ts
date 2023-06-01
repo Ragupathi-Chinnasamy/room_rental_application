@@ -8,12 +8,7 @@ export class AuthController {
   constructor(private authService: AuthService) {}
 
   @Post()
-  async WebUserLogin(
-    @Body() signInCredentials: SignInDto,
-    @Req() req: Request,
-  ) {
-    console.log(req?.headers);
-
+  async WebUserLogin(@Body() signInCredentials: SignInDto) {
     const result = await this.authService.SignIn(signInCredentials);
 
     return {

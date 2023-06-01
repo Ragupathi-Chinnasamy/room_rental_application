@@ -19,6 +19,7 @@ let UserController = class UserController {
     }
     async getAllUsers() {
         const result = await this.prismaService.user.findMany({});
+        console.log(result);
         return {
             status: true,
             data: result,
